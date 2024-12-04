@@ -1,0 +1,181 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff66b2, #ff3385);
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 1.2rem;
+    flex-direction: column; /* Ensures all content is vertically aligned */
+}
+
+/* Header Styles with Border and Effects */
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Glow effect */
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(45deg, #ff3385, #ff66b2); /* Gradient under the title */
+    border-radius: 5px;
+}
+
+/* Subheading with underlining effect */
+.subheading {
+    font-size: 1.5rem;
+    color: #f2f2f2;
+    margin-bottom: 40px;
+    font-weight: 300;
+    position: relative;
+}
+
+.subheading::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background-color: #ff3385; /* Gradient underline */
+    border-radius: 5px;
+}
+
+/* Button Styles */
+button {
+    background: linear-gradient(45deg, #ff3385, #ff66b2);
+    color: white;
+    border: 2px solid #ff3385;
+    padding: 18px 35px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    margin-top: 20px; /* Space between button and other elements */
+}
+
+button:hover {
+    background-color: #ff66b2;
+    transform: scale(1.1);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3); /* Increase shadow size on hover */
+}
+
+/* Section Styling */
+.fun-facts {
+    max-width: 600px;
+    margin: 40px auto;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    line-height: 1.8;
+    border: 2px solid #fff; /* White border around the fun facts */
+    padding: 20px;
+    border-radius: 15px; /* Rounded borders */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    text-align: left; /* Keeps text left-aligned in the section */
+}
+
+/* Fun Fact List Styles */
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: left;
+    font-weight: 400;
+    position: relative;
+}
+
+ul li::before {
+    content: "💖";
+    position: absolute;
+    left: -30px;
+    top: 0;
+    font-size: 1.4rem;
+    color: #ff3385;
+}
+
+/* Footer Styles */
+footer {
+    font-size: 1.1rem;
+    color: #d9d9d9;
+    margin-top: 50px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Heart Container for the Animation */
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    animation: popHeart 2s ease-out forwards;
+    color: white; /* Keeps hearts white */
+}
+
+/* Heart Animation */
+@keyframes popHeart {
+    0% {
+        opacity: 1;
+        transform: scale(0) translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5) translateY(-200px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) translateY(-400px);
+    }
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff3385;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #ff66b2;
+}
